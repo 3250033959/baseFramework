@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TipEditText">
+        <attr name="tipedit_background" format="color"></attr>
+        <attr name="tipedit_tipcolor" format="color"></attr>
+        <attr name="tipedit_linecolor" format="color"></attr>
+        <attr name="tipedit_linetipcolor" format="color"></attr>
+        <attr name="tipedit_text" format="string"></attr>
+        <attr name="tipedit_hint" format="string"></attr>
+        <attr name="tipedit_maxlength" format="integer"></attr>
+        <attr name="tipedit_singleline" format="boolean"></attr>
+        <attr name="tipedit_watcher" format="enum">
+            <enum name="mobile" value="1"></enum>
+            <enum name="name" value="2"></enum>
+            <enum name="normal" value="3"></enum>
+        </attr>
+        <attr name="tipedit_inputtype" format="enum">
+            <enum name="mobile" value="1"></enum>
+            <enum name="other" value="2"></enum>
+        </attr>
+        <attr name="tipedit_line_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+        <attr name="tipedit_cannull" format="boolean"></attr>
+        <attr name="tipedit_label_visible" format="enum">
+            <enum name="visible" value="0"></enum>
+            <enum name="invisible" value="4"></enum>
+            <enum name="gone" value="8"></enum>
+        </attr>
+        <attr name="tipedit_label_text" format="string"></attr>
+        <attr name="tipedit_label_width" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="TextImageButton">
+        <attr name="ibTextSize" format="reference|dimension"></attr>
+        <attr name="ibText" format="reference|string"></attr>
+        <attr name="ibTextColor" format="reference|color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="swipelistviewstyle1">
+        <attr name="right_width1" format="dimension"></attr>
+    </declare-styleable>
+    <declare-styleable name="ViewFlow">
+        <attr name="sidebuffer" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CircleFlowIndicator">
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="centered" format="boolean" />
+        <attr name="fadeOut" format="integer" />
+        <attr name="inactiveType">
+            <flag name="stroke" value="0" />
+            <flag name="fill" value="1" />
+        </attr>
+        <attr name="activeType">
+            <flag name="stroke" value="0" />
+            <flag name="fill" value="1" />
+        </attr>
+        <attr name="circleSeparation" format="dimension" />
+        <attr name="activeRadius" format="dimension" />
+    </declare-styleable>
+</resources>

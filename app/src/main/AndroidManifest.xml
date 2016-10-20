@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.msj.baseframe">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.msj.baseframe.common.BaseApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="false"
+        tools:replace="android:allowBackup,android:theme"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/NoBackgroundTheme">
+        <activity android:name=".MainActivity_">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".common.activity.BaseActivity" />
+        <activity android:name=".bussiness.loginmvp.LoginActivity_" />
+        <activity android:name=".common.activity.WebViewActivity"></activity>
+
+        <receiver android:name=".receiver.RetryLoginReceiver">
+            <intent-filter>
+                <action android:name="android.luoteng.folk.intent.action.RETRYLOGIN_RECEIVER_ACTION" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.NetWorkReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
