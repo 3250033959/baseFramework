@@ -11,7 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-import com.msj.core.BaseActivity;
+import com.msj.core.AbstractBaseActivity;
 import com.msj.core.R;
 import com.msj.core.utils.constant.LogConstant;
 
@@ -19,7 +19,7 @@ import com.msj.core.utils.constant.LogConstant;
 /**
  * @Description:WebView界面，带自定义进度条显示
  */
-public class BaseWebActivity extends BaseActivity {
+public class BaseWebActivity extends AbstractBaseActivity {
 
     protected WebView mWebView;
     private TextView title;

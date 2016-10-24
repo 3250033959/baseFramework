@@ -30,7 +30,7 @@ import com.msj.networkcore.mvp.view.IBaseView;
  * @copyright ©2016 孟祥程 All Rights Reserved
  * @desc BaseActivity
  */
-public abstract class BaseActivity extends Activity implements IBaseView {
+public abstract class AbstractBaseActivity extends Activity implements IBaseView {
 
     /**
      * 快点时间
@@ -61,7 +61,7 @@ public abstract class BaseActivity extends Activity implements IBaseView {
 
 
     private void initBasic() {
-        this.context = BaseActivity.this;
+        this.context = AbstractBaseActivity.this;
         preferenceStorageService = SharePreferenceStorageService
                 .newInstance(getApplicationContext());
         if (toastUtil == null) {
@@ -94,7 +94,7 @@ public abstract class BaseActivity extends Activity implements IBaseView {
      * @param cancelName 取消按钮
      * @param listener 监听器
      */
-    public void showCustomDialog(final BaseActivity context, String content, String submitName, String cancelName, PrompfDialog.UpdateOnclickListener listener) {
+    public void showCustomDialog(final AbstractBaseActivity context, String content, String submitName, String cancelName, PrompfDialog.UpdateOnclickListener listener) {
 
         customDialog = null;
         customDialog = new PrompfDialog(context,

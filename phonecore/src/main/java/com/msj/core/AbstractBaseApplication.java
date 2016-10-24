@@ -14,7 +14,7 @@ import org.litepal.LitePalApplication;
  * @copyright ©2016 孟祥程 All Rights Reserved
  * @desc
  */
-public class BaseApplication extends LitePalApplication {
+public class AbstractBaseApplication extends LitePalApplication {
 
     @Override
     public void onCreate() {

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.msj.core.BaseActivity;
+import com.msj.core.AbstractBaseActivity;
 import com.msj.core.R;
 import com.msj.core.utils.android.ImageUtils;
 
@@ -21,12 +21,12 @@ import java.util.List;
  */
 public class ImagePagerAdapter extends BaseAdapter {
 
-    private BaseActivity context;
+    private AbstractBaseActivity context;
     private List<String> bannerList = new ArrayList<String>();
     private int size;
     private boolean isInfiniteLoop;
 
-    public ImagePagerAdapter(BaseActivity context) {
+    public ImagePagerAdapter(AbstractBaseActivity context) {
         this.context = context;
 //		this.bannerList = bannerList;
         if (bannerList != null) {

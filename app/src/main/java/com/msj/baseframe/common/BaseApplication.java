@@ -1,16 +1,16 @@
 package com.msj.baseframe.common;
 
-import android.app.Application;
 import android.content.Context;
 import android.view.WindowManager;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.msj.core.AbstractBaseApplication;
 import com.msj.core.utils.android.ImageUtils;
 
 /**
  * Created by liang on 2016/10/8.
  */
-public class BaseApplication  extends com.msj.core.BaseApplication {
+public class BaseApplication  extends AbstractBaseApplication {
 
         @SuppressWarnings("unused")
         private final String TAB = "BaseApplication";
