@@ -7,7 +7,7 @@ package com.msj.networkcore.mvp.bean;
  * @copyright ©2016 孟祥程 All Rights Reserved
  * @desc
  */
-public class Header extends BaseEntity {
+public class ResponseHeader extends BaseEntity {
 
     private String repcd;
 
