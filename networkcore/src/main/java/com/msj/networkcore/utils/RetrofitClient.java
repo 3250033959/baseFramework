@@ -33,7 +33,7 @@ public class RetrofitClient {
 
     private IBaseBiz baseBiz;
     private static OkHttpClient okHttpClient;
-    public static String baseUrl = "https://www.baidu.com";
+    public static String BASE_URL = "https://www.baidu.com";
     private  Context mContext;
     private Retrofit mRetrofit;
     private static RetrofitClient mInstance;
@@ -67,14 +67,23 @@ public class RetrofitClient {
 
         Map<String,String> headers = new HashMap<>();
 
-        okHttpClient = OkHttpUtils.getInstance(context,headers).getmOkHttpClient();
+        synchronized (OkHttpClient.class){
+            if(okHttpClient == null){
+                okHttpClient = OkHttpUtils.getInstance(context,headers).getmOkHttpClient();
+            }
+        }
 
-        mRetrofit = new Retrofit.Builder()
-                .client(okHttpClient)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(baseUrl)
-                .build();
+        synchronized (Retrofit.class) {
+            if (mRetrofit == null) {
+                mRetrofit = new Retrofit.Builder()
+                        .client(okHttpClient)
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                        .baseUrl(BASE_URL)
+                        .build();
+            }
+        }
+
 
     }
 
