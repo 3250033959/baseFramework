@@ -21,7 +21,6 @@ import com.msj.core.utils.android.SharePreferenceStorageService;
 import com.msj.core.utils.android.ToastUtil;
 import com.msj.core.utils.android.ToastUtilHaveRight;
 import com.msj.core.view.dialog.PrompfDialog;
-import com.msj.networkcore.mvp.presentor.DemoPresentor;
 import com.msj.networkcore.mvp.view.IBaseView;
 
 /**
@@ -48,7 +47,7 @@ public abstract class AbstractBaseActivity extends Activity implements IBaseView
     public Context context;
 
     //DemoPresentor MVP模式，这里只是为了例子方便查看
-    private DemoPresentor presenter ;
+//    private DemoPresentor presenter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

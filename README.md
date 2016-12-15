@@ -3,6 +3,31 @@
 ---
 ***本框架网络部分采用 [Retrofit2.0](https://centmeng.github.io/2016/10/17/Retrofit2%E4%BB%8B%E7%BB%8D/)+okhttp3+[Rxjava](http://gank.io/post/560e15be2dca930e00da1083)搭建，网络框架内容主要在networkcore中体现，并且在htjccore中集成了图片加载框架Fresco,Glide和Litepal数据库框架以及各Utils和自定义控件以及BaseActivity，和BaseAllication。在项目中使用采用MVP模式进行开发***
 
+## 配置使用在根build.gradle配置信息如
+
+```
+ext {
+    compileSdkVersion = 23
+    buildToolsVersion = '23.0.2'
+    minSdkVersion = 14
+    targetSdkVersion = 23
+    versionCode = 1
+    versionName = "0.0.1"
+    //控制生产或测试的日志是否输出
+    logDebug = false
+    supportLib = '23.4.0'
+    retrofitVersion = '2.1.0'
+    okHttpVersion = '3.4.1'
+    converterGsonVersion = '2.1.0'
+    retrofitrxJava = '2.1.0'
+    rxJava = '1.0.14'
+    rxAndroid = '1.0.1'
+    litepal = '1.3.2'
+    fresco = '0.12.0'
+    glide = '3.7.0'
+}
+```
+
 ## library
 ---
 ### htjccore

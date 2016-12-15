@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'org.litepal.android:core:1.3.2'
-    compile 'com.android.support:support-v4:24.0.0'
-    compile 'com.facebook.fresco:fresco:0.12.0'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.android.support:recyclerview-v7:23.0.1'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile project(':networkcore')
+    compile "com.android.support:appcompat-v7:$rootProject.supportLib"
+    compile "org.litepal.android:core:$rootProject.litepal"
+    compile "com.android.support:support-v4:$rootProject.supportLib"
+    compile "com.facebook.fresco:fresco:$rootProject.fresco"
+    compile "com.google.code.gson:gson:$rootProject.converterGsonVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLib"
+    compile "com.github.bumptech.glide:glide:$rootProject.glide"
+    compile 'com.htjc.networkcore:networkcore:1.0.1'
 }
 
 android {

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'//添加
 
 android {
     compileSdkVersion 23
@@ -17,14 +18,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+        warning 'InvalidPackage'
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'io.reactivex:rxjava:1.0.14'
-    compile 'io.reactivex:rxandroid:1.0.1'
+    compile "com.android.support:appcompat-v7:$rootProject.supportLib"
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    compile "io.reactivex:rxjava:$rootProject.rxJava"
+    compile "io.reactivex:rxandroid:$rootProject.rxAndroid"
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+}
+
+//添加
+publish {
+    userOrg = 'dreamteam'//bintray.com用户名
+    groupId = 'com.msj.networkcore'//jcenter上的路径
+    artifactId = 'networkcore'//项目名称
+    publishVersion = '1.0.1'//版本号
+    desc = 'Retrofit2+okhttp3+Rxjava封装的网络框架'//描述，不重要
+    website = 'https://github.com/centmeng'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
