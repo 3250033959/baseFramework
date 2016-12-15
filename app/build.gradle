@@ -20,6 +20,12 @@ android {
         }
     }
     sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/rwa'] } }
+
+
+    lintOptions {
+        abortOnError false
+        warning 'InvalidPackage'
+    }
 }
 
 dependencies {
@@ -27,6 +33,12 @@ dependencies {
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile project(':phonecore')
+}
+
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
 }
 
 apt {

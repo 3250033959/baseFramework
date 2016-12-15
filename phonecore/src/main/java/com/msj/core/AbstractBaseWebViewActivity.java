@@ -67,9 +67,9 @@ public abstract class AbstractBaseWebViewActivity extends AbstractBaseActivity {
      * 初始化webview
      * 使用姿势:
      * *@Override
-    public void initWebView() {
-    webview = (WebView) findViewById(R.id.h5_webview);
-    }
+     public void initWebView() {
+     webview = (WebView) findViewById(R.id.h5_webview);
+     }
      */
     public abstract void initWebView();
 
@@ -77,9 +77,9 @@ public abstract class AbstractBaseWebViewActivity extends AbstractBaseActivity {
      * 初始化路径
      * 使用姿势:
      *  * @Override
-    public void initUri(){
-    url = "https://wallet.95598pay.com/gift/rest/activity/index.htm";
-    }
+     public void initUri(){
+     url = "https://wallet.95598pay.com/gift/rest/activity/index.htm";
+     }
      */
     public abstract void initUri();
 
@@ -109,13 +109,13 @@ public abstract class AbstractBaseWebViewActivity extends AbstractBaseActivity {
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 //为了发生不可预知的错误处理,是自己公司的签名则信任通过,否则取消,即显示空白页
-                if("ComanyName自己签名的公司名".equals(error.getCertificate().getIssuedBy().getOName())){
-                    LogUtils.e("msj", "procceed"+error.getCertificate().getIssuedBy().getCName());
+//                if("ComanyName自己签名的公司名".equals(error.getCertificate().getIssuedBy().getOName())){
+//                    LogUtils.e("msj", "procceed"+error.getCertificate().getIssuedBy().getCName());
                     handler.proceed();
-                }else{
-                    LogUtils.e("msj", "cancel"+error.getCertificate().getIssuedBy().getCName());
-                    handler.cancel();
-                }
+//                }else{
+//                    LogUtils.e("msj", "cancel"+error.getCertificate().getIssuedBy().getCName());
+//                    handler.cancel();
+//                }
 
             }
 
@@ -136,12 +136,13 @@ public abstract class AbstractBaseWebViewActivity extends AbstractBaseActivity {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onReceivedClientCertRequest(WebView view, ClientCertRequest request) {
-                LogUtils.e("msj", "onReceivedClientCertRequest");
-                if(((mX509Certificates != null) && (mX509Certificates.length !=0))){
-                    request.proceed(mPrivateKey, mX509Certificates);
-                }else{
-                    request.cancel();
-                }
+                //为webview添加证书
+//                LogUtils.e("msj", "onReceivedClientCertRequest");
+//                if(((mX509Certificates != null) && (mX509Certificates.length !=0))){
+//                    request.proceed(mPrivateKey, mX509Certificates);
+//                }else{
+//                    request.cancel();
+//                }
 
             }
 
