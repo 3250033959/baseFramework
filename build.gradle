@@ -48,7 +48,7 @@ ext {
     versionName = "0.0.1"
     //控制生产或测试的日志是否输出
     logDebug = false
-    supportLib = '23.4.0'
+    supportLib = '24.2.0'
     retrofitVersion = '2.1.0'
     okHttpVersion = '3.4.1'
     converterGsonVersion = '2.1.0'

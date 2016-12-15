@@ -1,17 +1,6 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'com.novoda.bintray-release'//添加
 
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:$rootProject.supportLib"
-    compile "org.litepal.android:core:$rootProject.litepal"
-    compile "com.android.support:support-v4:$rootProject.supportLib"
-    compile "com.facebook.fresco:fresco:$rootProject.fresco"
-    compile "com.google.code.gson:gson:$rootProject.converterGsonVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.supportLib"
-    compile "com.github.bumptech.glide:glide:$rootProject.glide"
-    compile 'com.htjc.networkcore:networkcore:1.0.1'
-}
 
 android {
     publishNonDefault true
@@ -45,6 +34,18 @@ android {
         abortOnError false
         warning 'InvalidPackage'
     }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLib"
+    compile "org.litepal.android:core:$rootProject.ext.litepal"
+    compile "com.android.support:support-v4:$rootProject.ext.supportLib"
+    compile "com.facebook.fresco:fresco:$rootProject.ext.fresco"
+    compile "com.google.code.gson:gson:$rootProject.ext.converterGsonVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLib"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    compile 'com.htjc.networkcore:networkcore:1.0.1'
 }
 
 tasks.withType(Javadoc) {

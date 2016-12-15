@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.msj.core.AbstractBaseActivity;
 import com.msj.core.R;
 import com.msj.core.utils.constant.LogConstant;
+import com.msj.networkcore.mvp.bean.ApiResponse;
 
 
 /**
@@ -113,4 +114,8 @@ public class BaseWebActivity extends AbstractBaseActivity {
     }
 
 
+    @Override
+    public boolean success(ApiResponse response) {
+        return false;
+    }
 }
